@@ -1,0 +1,755 @@
+== Dungeon Run Starts: 7 Floors ==
+
+== Floor 1 ==
+
+--- A Battle Begins! ---
+Warrior starts with: Bandage, Antidote
+Rogue starts with: Minor Health Potion, Antidote
+Cleric starts with: Throwing Knife, Basic Bomb
+--- Round 1 ---
+Rogue uses Minor Health Potion.
+Rogue heals for 25. [HP: 100/100]
+Warrior uses Antidote.
+Warrior uses Antidote to cure ailments.
+Cleric uses Throwing Knife.
+Cleric throws a Throwing Knife at Chaos Fungus for 10 damage.
+Chaos Fungus takes 1 damage. [HP: 54/55]
+Dark Acolyte attacks Rogue for 9 damage!
+Rogue takes 0 damage. [HP: 100/100]
+Chaos Fungus attacks Warrior for 11 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Slime attacks Cleric for 2 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Rogue for 16 damage!
+Rogue takes 1 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 2 ---
+Rogue attacks Dark Acolyte for 30 damage!
+Dark Acolyte takes 25 damage. [HP: 11/36]
+Warrior uses Bandage.
+Warrior heals for 10. [HP: 100/100]
+Cleric uses Basic Bomb.
+Cleric uses Basic Bomb, hitting all enemies.
+Slime takes 14 damage. [HP: 0/10]
+Arcane Sentinel takes 3 damage. [HP: 67/70]
+Chaos Fungus takes 6 damage. [HP: 48/55]
+Dark Acolyte takes 10 damage. [HP: 1/36]
+Dark Acolyte attacks Warrior for 12 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Chaos Fungus attacks Rogue for 13 damage!
+Rogue takes 0 damage. [HP: 99/100]
+Arcane Sentinel attacks Cleric for 17 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 3 ---
+Rogue uses Antidote.
+Rogue uses Antidote to cure ailments.
+Warrior attacks Dark Acolyte for 28 damage!
+Dark Acolyte takes 23 damage. [HP: 0/36]
+Chaos Fungus attacks Cleric for 11 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Rogue for 16 damage!
+Rogue takes 1 damage. [HP: 98/100]
+--- End of Round ---
+--- Round 4 ---
+Rogue uses Precision Shot on Arcane Sentinel for 23 damage.
+Arcane Sentinel takes 11 damage. [HP: 56/70]
+Warrior uses Elemental Blast on Chaos Fungus for 54 damage.
+Chaos Fungus takes 45 damage. [HP: 3/55]
+Cleric attacks Arcane Sentinel for 22 damage!
+Arcane Sentinel takes 10 damage. [HP: 46/70]
+Chaos Fungus attacks Warrior for 13 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Cleric for 16 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 5 ---
+Rogue attacks Chaos Fungus for 30 damage!
+Chaos Fungus takes 21 damage. [HP: 0/55]
+Warrior attacks Arcane Sentinel for 28 damage!
+Arcane Sentinel takes 16 damage. [HP: 30/70]
+Cleric attacks Arcane Sentinel for 22 damage!
+Arcane Sentinel takes 10 damage. [HP: 20/70]
+Arcane Sentinel attacks Cleric for 18 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 6 ---
+Rogue attacks Arcane Sentinel for 34 damage!
+Arcane Sentinel takes 22 damage. [HP: 0/70]
+--- End of Round ---
+Victory! All enemies defeated.
+--- Post-Battle Recovery ---
+Warrior heals for 10. [HP: 100/100]
+Warrior rests and recovers 10 HP.
+Rogue heals for 10. [HP: 100/100]
+Rogue rests and recovers 10 HP.
+Cleric heals for 10. [HP: 100/100]
+Cleric rests and recovers 10 HP.
+
+== Floor 2 ==
+
+--- A Battle Begins! ---
+--- Round 1 ---
+Rogue attacks The Hollow King for 31 damage!
+The Hollow King takes 8 damage. [HP: 125/133]
+Warrior attacks Dust Imp for 26 damage!
+Dust Imp takes 23 damage. [HP: 0/19]
+Cleric attacks The Hollow King for 23 damage!
+The Hollow King takes 0 damage. [HP: 125/133]
+Cave Bat attacks Warrior for 6 damage!
+Warrior takes 0 damage. [HP: 100/100]
+The Hollow King attacks Cleric for 23 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 2 ---
+Rogue attacks The Hollow King for 34 damage!
+The Hollow King takes 11 damage. [HP: 114/133]
+Warrior uses Elemental Blast on Cave Bat for 48 damage.
+Cave Bat takes 46 damage. [HP: 0/11]
+Cleric attacks The Hollow King for 20 damage!
+The Hollow King takes 0 damage. [HP: 114/133]
+The Hollow King attacks Cleric for 24 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 3 ---
+Rogue attacks The Hollow King for 34 damage!
+The Hollow King takes 11 damage. [HP: 103/133]
+Warrior attacks The Hollow King for 25 damage!
+The Hollow King takes 2 damage. [HP: 101/133]
+The Hollow King attacks Warrior for 23 damage!
+Warrior takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 4 ---
+Rogue uses Minor Fireball on The Hollow King for 20 damage.
+The Hollow King takes 0 damage. [HP: 101/133]
+Warrior uses Elemental Blast on The Hollow King for 56 damage.
+The Hollow King takes 33 damage. [HP: 68/133]
+The Hollow King attacks Warrior for 24 damage!
+Warrior takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 5 ---
+Rogue uses Precision Shot on The Hollow King for 17 damage.
+The Hollow King takes 0 damage. [HP: 68/133]
+Warrior uses Arcane Missile on The Hollow King for 31 damage.
+The Hollow King takes 8 damage. [HP: 60/133]
+Cleric attacks The Hollow King for 20 damage!
+The Hollow King takes 0 damage. [HP: 60/133]
+The Hollow King attacks Rogue for 23 damage!
+Rogue takes 8 damage. [HP: 92/100]
+--- End of Round ---
+--- Round 6 ---
+Rogue attacks The Hollow King for 32 damage!
+The Hollow King takes 9 damage. [HP: 51/133]
+Warrior attacks The Hollow King for 25 damage!
+The Hollow King takes 2 damage. [HP: 49/133]
+Cleric attacks The Hollow King for 23 damage!
+The Hollow King takes 0 damage. [HP: 49/133]
+The Hollow King attacks Cleric for 24 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 7 ---
+Rogue attacks The Hollow King for 31 damage!
+The Hollow King takes 8 damage. [HP: 41/133]
+Warrior attacks The Hollow King for 25 damage!
+The Hollow King takes 2 damage. [HP: 39/133]
+Cleric attacks The Hollow King for 22 damage!
+The Hollow King takes 0 damage. [HP: 39/133]
+The Hollow King attacks Warrior for 26 damage!
+Warrior takes 1 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 8 ---
+Rogue attacks The Hollow King for 33 damage!
+The Hollow King takes 10 damage. [HP: 29/133]
+Warrior attacks The Hollow King for 26 damage!
+The Hollow King takes 3 damage. [HP: 26/133]
+Cleric attacks The Hollow King for 20 damage!
+The Hollow King takes 0 damage. [HP: 26/133]
+The Hollow King attacks Rogue for 25 damage!
+Rogue takes 10 damage. [HP: 82/100]
+--- End of Round ---
+--- Round 9 ---
+Rogue uses Minor Fireball on The Hollow King for 16 damage.
+The Hollow King takes 0 damage. [HP: 26/133]
+Warrior uses Arcane Missile on The Hollow King for 25 damage.
+The Hollow King takes 2 damage. [HP: 24/133]
+Cleric attacks The Hollow King for 23 damage!
+The Hollow King takes 0 damage. [HP: 24/133]
+The Hollow King attacks Rogue for 25 damage!
+Rogue takes 10 damage. [HP: 72/100]
+--- End of Round ---
+--- Round 10 ---
+Rogue attacks The Hollow King for 32 damage!
+The Hollow King takes 9 damage. [HP: 15/133]
+Warrior uses Elemental Blast on The Hollow King for 43 damage.
+The Hollow King takes 20 damage. [HP: 0/133]
+--- End of Round ---
+Victory! All enemies defeated.
+--- Post-Battle Recovery ---
+Warrior heals for 10. [HP: 100/100]
+Warrior rests and recovers 10 HP.
+Rogue heals for 10. [HP: 82/100]
+Rogue rests and recovers 10 HP.
+Cleric heals for 10. [HP: 100/100]
+Cleric rests and recovers 10 HP.
+
+== Floor 3 ==
+
+--- A Battle Begins! ---
+--- Round 1 ---
+Rogue attacks Goblin Scout for 32 damage!
+Goblin Scout takes 28 damage. [HP: 0/21]
+Warrior uses Elemental Blast on Mother Mycelia for 53 damage.
+Mother Mycelia takes 33 damage. [HP: 73/106]
+Thunder Lynx attacks Cleric for 15 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Cleric attacks Mother Mycelia for 22 damage!
+Mother Mycelia takes 2 damage. [HP: 71/106]
+Harpy attacks Warrior for 13 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Mother Mycelia attacks Cleric for 25 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 2 ---
+Rogue attacks Harpy for 30 damage!
+Harpy takes 24 damage. [HP: 12/36]
+Warrior uses Elemental Blast on Mother Mycelia for 56 damage.
+Mother Mycelia takes 36 damage. [HP: 35/106]
+Thunder Lynx attacks Rogue for 17 damage!
+Rogue takes 2 damage. [HP: 80/100]
+Cleric attacks Thunder Lynx for 24 damage!
+Thunder Lynx takes 18 damage. [HP: 22/40]
+Harpy attacks Cleric for 15 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Mother Mycelia attacks Warrior for 24 damage!
+Warrior takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 3 ---
+Rogue uses Precision Shot on Harpy for 15 damage.
+Harpy takes 9 damage. [HP: 3/36]
+Warrior uses Basic Attack on Mother Mycelia for 9 damage.
+Mother Mycelia takes 0 damage. [HP: 35/106]
+Thunder Lynx attacks Cleric for 16 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Cleric attacks Thunder Lynx for 22 damage!
+Thunder Lynx takes 16 damage. [HP: 6/40]
+Harpy attacks Cleric for 15 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Mother Mycelia attacks Rogue for 22 damage!
+Rogue takes 7 damage. [HP: 73/100]
+--- End of Round ---
+--- Round 4 ---
+Rogue attacks Thunder Lynx for 32 damage!
+Thunder Lynx takes 26 damage. [HP: 0/40]
+Warrior uses Elemental Blast on Mother Mycelia for 52 damage.
+Mother Mycelia takes 32 damage. [HP: 3/106]
+Cleric attacks Mother Mycelia for 23 damage!
+Mother Mycelia takes 3 damage. [HP: 0/106]
+Harpy attacks Cleric for 15 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 5 ---
+Rogue attacks Harpy for 30 damage!
+Harpy takes 24 damage. [HP: 0/36]
+--- End of Round ---
+Victory! All enemies defeated.
+--- Post-Battle Recovery ---
+Warrior heals for 10. [HP: 100/100]
+Warrior rests and recovers 10 HP.
+Rogue heals for 10. [HP: 83/100]
+Rogue rests and recovers 10 HP.
+Cleric heals for 10. [HP: 100/100]
+Cleric rests and recovers 10 HP.
+
+== Floor 4 ==
+
+--- A Battle Begins! ---
+--- Round 1 ---
+Rogue attacks Swamp Leech for 30 damage!
+Swamp Leech takes 22 damage. [HP: 12/34]
+Warrior attacks Time Wraith for 28 damage!
+Time Wraith takes 17 damage. [HP: 42/59]
+Cleric attacks Mirror Shade for 22 damage!
+Mirror Shade takes 9 damage. [HP: 60/69]
+Time Wraith attacks Rogue for 18 damage!
+Rogue takes 3 damage. [HP: 80/100]
+Mirror Shade attacks Warrior for 16 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Swamp Leech attacks Cleric for 7 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 2 ---
+Rogue attacks Time Wraith for 32 damage!
+Time Wraith takes 21 damage. [HP: 21/59]
+Warrior attacks Mirror Shade for 27 damage!
+Mirror Shade takes 14 damage. [HP: 46/69]
+Cleric attacks Mirror Shade for 22 damage!
+Mirror Shade takes 9 damage. [HP: 37/69]
+Time Wraith attacks Cleric for 18 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Mirror Shade attacks Warrior for 17 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Swamp Leech attacks Rogue for 9 damage!
+Rogue takes 0 damage. [HP: 80/100]
+--- End of Round ---
+--- Round 3 ---
+Rogue attacks Mirror Shade for 32 damage!
+Mirror Shade takes 19 damage. [HP: 18/69]
+Warrior attacks Time Wraith for 25 damage!
+Time Wraith takes 14 damage. [HP: 7/59]
+Cleric uses Healing Word on Rogue for 42 healing.
+Rogue heals for 42. [HP: 100/100]
+Time Wraith attacks Warrior for 15 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Mirror Shade attacks Warrior for 18 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Swamp Leech attacks Cleric for 7 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 4 ---
+Rogue uses Precision Shot on Swamp Leech for 21 damage.
+Swamp Leech takes 13 damage. [HP: 0/34]
+Warrior uses Basic Attack on Mirror Shade for 7 damage.
+Mirror Shade takes 0 damage. [HP: 18/69]
+Cleric attacks Mirror Shade for 23 damage!
+Mirror Shade takes 10 damage. [HP: 8/69]
+Time Wraith attacks Cleric for 18 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Mirror Shade attacks Cleric for 18 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 5 ---
+Rogue attacks Mirror Shade for 32 damage!
+Mirror Shade takes 19 damage. [HP: 0/69]
+Warrior attacks Time Wraith for 28 damage!
+Time Wraith takes 17 damage. [HP: 0/59]
+--- End of Round ---
+Victory! All enemies defeated.
+--- Post-Battle Recovery ---
+Warrior heals for 10. [HP: 100/100]
+Warrior rests and recovers 10 HP.
+Rogue heals for 10. [HP: 100/100]
+Rogue rests and recovers 10 HP.
+Cleric heals for 10. [HP: 100/100]
+Cleric rests and recovers 10 HP.
+
+== Floor 5 ==
+
+--- A Battle Begins! ---
+--- Round 1 ---
+Rogue uses Minor Fireball on Wraith for 18 damage.
+Wraith takes 8 damage. [HP: 44/52]
+Warrior uses Elemental Blast on Time Wraith for 40 damage.
+Time Wraith takes 28 damage. [HP: 34/62]
+Cleric attacks Wraith for 21 damage!
+Wraith takes 11 damage. [HP: 33/52]
+Time Wraith attacks Warrior for 16 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Wraith attacks Cleric for 17 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 2 ---
+Rogue uses Minor Fireball on Time Wraith for 13 damage.
+Time Wraith takes 1 damage. [HP: 33/62]
+Warrior attacks Wraith for 28 damage!
+Wraith takes 18 damage. [HP: 15/52]
+Cleric attacks Wraith for 20 damage!
+Wraith takes 10 damage. [HP: 5/52]
+Time Wraith attacks Warrior for 16 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Wraith attacks Cleric for 15 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 3 ---
+Rogue uses Minor Fireball on Time Wraith for 20 damage.
+Time Wraith takes 8 damage. [HP: 25/62]
+Warrior uses Basic Attack on Time Wraith for 7 damage.
+Time Wraith takes 0 damage. [HP: 25/62]
+Cleric attacks Time Wraith for 21 damage!
+Time Wraith takes 9 damage. [HP: 16/62]
+Time Wraith attacks Rogue for 19 damage!
+Rogue takes 4 damage. [HP: 96/100]
+Wraith attacks Rogue for 17 damage!
+Rogue takes 2 damage. [HP: 94/100]
+--- End of Round ---
+--- Round 4 ---
+Rogue attacks Time Wraith for 30 damage!
+Time Wraith takes 18 damage. [HP: 0/62]
+Warrior uses Elemental Blast on Wraith for 43 damage.
+Wraith takes 33 damage. [HP: 0/52]
+--- End of Round ---
+Victory! All enemies defeated.
+--- Post-Battle Recovery ---
+Warrior heals for 10. [HP: 100/100]
+Warrior rests and recovers 10 HP.
+Rogue heals for 10. [HP: 100/100]
+Rogue rests and recovers 10 HP.
+Cleric heals for 10. [HP: 100/100]
+Cleric rests and recovers 10 HP.
+
+== Floor 6 ==
+
+--- A Battle Begins! ---
+--- Round 1 ---
+Rogue attacks Arcane Sentinel for 30 damage!
+Arcane Sentinel takes 13 damage. [HP: 72/85]
+Warrior uses Basic Attack on Dark Acolyte for 6 damage.
+Dark Acolyte takes 0 damage. [HP: 51/51]
+Cleric attacks Orc Warrior for 21 damage!
+Orc Warrior takes 8 damage. [HP: 52/60]
+Dark Acolyte attacks Warrior for 17 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Bandit Thug attacks Cleric for 15 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Orc Warrior attacks Warrior for 19 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Warrior for 23 damage!
+Warrior takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 2 ---
+Rogue uses Minor Fireball on Bandit Thug for 12 damage.
+Bandit Thug takes 4 damage. [HP: 33/37]
+Warrior attacks Arcane Sentinel for 27 damage!
+Arcane Sentinel takes 10 damage. [HP: 62/85]
+Cleric attacks Orc Warrior for 23 damage!
+Orc Warrior takes 10 damage. [HP: 42/60]
+Dark Acolyte attacks Warrior for 16 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Bandit Thug attacks Rogue for 13 damage!
+Rogue takes 0 damage. [HP: 100/100]
+Orc Warrior attacks Rogue for 19 damage!
+Rogue takes 4 damage. [HP: 96/100]
+Arcane Sentinel attacks Cleric for 23 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 3 ---
+Rogue uses Minor Fireball on Bandit Thug for 17 damage.
+Bandit Thug takes 9 damage. [HP: 24/37]
+Warrior attacks Arcane Sentinel for 27 damage!
+Arcane Sentinel takes 10 damage. [HP: 52/85]
+Cleric attacks Arcane Sentinel for 24 damage!
+Arcane Sentinel takes 7 damage. [HP: 45/85]
+Dark Acolyte attacks Cleric for 14 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Bandit Thug attacks Rogue for 13 damage!
+Rogue takes 0 damage. [HP: 96/100]
+Orc Warrior attacks Rogue for 18 damage!
+Rogue takes 3 damage. [HP: 93/100]
+Arcane Sentinel attacks Warrior for 20 damage!
+Warrior takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 4 ---
+Rogue uses Minor Fireball on Orc Warrior for 14 damage.
+Orc Warrior takes 1 damage. [HP: 41/60]
+Warrior attacks Dark Acolyte for 29 damage!
+Dark Acolyte takes 19 damage. [HP: 32/51]
+Cleric uses Healing Word on Rogue for 44 healing.
+Rogue heals for 44. [HP: 100/100]
+Dark Acolyte attacks Rogue for 17 damage!
+Rogue takes 2 damage. [HP: 98/100]
+Bandit Thug attacks Rogue for 12 damage!
+Rogue takes 0 damage. [HP: 98/100]
+Orc Warrior attacks Cleric for 17 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Cleric for 22 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 5 ---
+Rogue attacks Dark Acolyte for 31 damage!
+Dark Acolyte takes 21 damage. [HP: 11/51]
+Warrior uses Elemental Blast on Dark Acolyte for 54 damage.
+Dark Acolyte takes 44 damage. [HP: 0/51]
+Cleric uses Healing Word on Rogue for 35 healing.
+Rogue heals for 35. [HP: 100/100]
+Bandit Thug attacks Rogue for 12 damage!
+Rogue takes 0 damage. [HP: 100/100]
+Orc Warrior attacks Warrior for 18 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Rogue for 22 damage!
+Rogue takes 7 damage. [HP: 93/100]
+--- End of Round ---
+--- Round 6 ---
+Rogue uses Precision Shot on Orc Warrior for 23 damage.
+Orc Warrior takes 10 damage. [HP: 31/60]
+Warrior attacks Arcane Sentinel for 26 damage!
+Arcane Sentinel takes 9 damage. [HP: 36/85]
+Cleric attacks Orc Warrior for 20 damage!
+Orc Warrior takes 7 damage. [HP: 24/60]
+Bandit Thug attacks Cleric for 15 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Orc Warrior attacks Warrior for 20 damage!
+Warrior takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Rogue for 20 damage!
+Rogue takes 5 damage. [HP: 88/100]
+--- End of Round ---
+--- Round 7 ---
+Rogue uses Precision Shot on Bandit Thug for 18 damage.
+Bandit Thug takes 10 damage. [HP: 14/37]
+Warrior attacks Orc Warrior for 29 damage!
+Orc Warrior takes 16 damage. [HP: 8/60]
+Cleric attacks Arcane Sentinel for 22 damage!
+Arcane Sentinel takes 5 damage. [HP: 31/85]
+Bandit Thug attacks Cleric for 12 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Orc Warrior attacks Cleric for 18 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Rogue for 22 damage!
+Rogue takes 7 damage. [HP: 81/100]
+--- End of Round ---
+--- Round 8 ---
+Rogue attacks Bandit Thug for 31 damage!
+Bandit Thug takes 23 damage. [HP: 0/37]
+Warrior attacks Arcane Sentinel for 26 damage!
+Arcane Sentinel takes 9 damage. [HP: 22/85]
+Cleric attacks Arcane Sentinel for 23 damage!
+Arcane Sentinel takes 6 damage. [HP: 16/85]
+Orc Warrior attacks Rogue for 19 damage!
+Rogue takes 4 damage. [HP: 77/100]
+Arcane Sentinel attacks Cleric for 22 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 9 ---
+Rogue uses Precision Shot on Arcane Sentinel for 22 damage.
+Arcane Sentinel takes 5 damage. [HP: 11/85]
+Warrior uses Basic Attack on Arcane Sentinel for 6 damage.
+Arcane Sentinel takes 0 damage. [HP: 11/85]
+Cleric attacks Arcane Sentinel for 24 damage!
+Arcane Sentinel takes 7 damage. [HP: 4/85]
+Orc Warrior attacks Cleric for 17 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Arcane Sentinel attacks Cleric for 21 damage!
+Cleric takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 10 ---
+Rogue attacks Orc Warrior for 34 damage!
+Orc Warrior takes 21 damage. [HP: 0/60]
+Warrior attacks Arcane Sentinel for 27 damage!
+Arcane Sentinel takes 10 damage. [HP: 0/85]
+--- End of Round ---
+Victory! All enemies defeated.
+--- Post-Battle Recovery ---
+Warrior heals for 10. [HP: 100/100]
+Warrior rests and recovers 10 HP.
+Rogue heals for 10. [HP: 87/100]
+Rogue rests and recovers 10 HP.
+Cleric heals for 10. [HP: 100/100]
+Cleric rests and recovers 10 HP.
+
+== Floor 7 ==
+
+--- A Battle Begins! ---
+--- Round 1 ---
+Rogue attacks The Hollow King for 33 damage!
+The Hollow King takes 5 damage. [HP: 143/148]
+Warrior uses Arcane Missile on Thunder Lynx for 37 damage.
+Thunder Lynx takes 27 damage. [HP: 25/52]
+Thunder Lynx attacks Cleric for 20 damage!
+Cleric takes 0 damage. [HP: 100/100]
+Cleric attacks The Hollow King for 24 damage!
+The Hollow King takes 0 damage. [HP: 143/148]
+The Hollow King attacks Rogue for 31 damage!
+Rogue takes 16 damage. [HP: 71/100]
+Ratling attacks Rogue for 9 damage!
+Rogue takes 0 damage. [HP: 71/100]
+--- End of Round ---
+--- Round 2 ---
+Rogue uses Precision Shot on Thunder Lynx for 19 damage.
+Thunder Lynx takes 9 damage. [HP: 16/52]
+Warrior attacks The Hollow King for 27 damage!
+The Hollow King takes 0 damage. [HP: 143/148]
+Thunder Lynx attacks Rogue for 20 damage!
+Rogue takes 5 damage. [HP: 66/100]
+Cleric attacks Ratling for 20 damage!
+Ratling takes 12 damage. [HP: 18/30]
+The Hollow King attacks Cleric for 31 damage!
+Cleric takes 1 damage. [HP: 99/100]
+Ratling attacks Cleric for 12 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 3 ---
+Rogue uses Precision Shot on Thunder Lynx for 20 damage.
+Thunder Lynx takes 10 damage. [HP: 6/52]
+Warrior attacks Thunder Lynx for 27 damage!
+Thunder Lynx takes 17 damage. [HP: 0/52]
+Cleric attacks The Hollow King for 21 damage!
+The Hollow King takes 0 damage. [HP: 143/148]
+The Hollow King attacks Cleric for 30 damage!
+Cleric takes 0 damage. [HP: 99/100]
+Ratling attacks Warrior for 9 damage!
+Warrior takes 0 damage. [HP: 100/100]
+--- End of Round ---
+--- Round 4 ---
+Rogue attacks Ratling for 34 damage!
+Ratling takes 26 damage. [HP: 0/30]
+Warrior uses Arcane Missile on The Hollow King for 31 damage.
+The Hollow King takes 3 damage. [HP: 140/148]
+Cleric attacks The Hollow King for 22 damage!
+The Hollow King takes 0 damage. [HP: 140/148]
+The Hollow King attacks Warrior for 29 damage!
+Warrior takes 4 damage. [HP: 96/100]
+--- End of Round ---
+--- Round 5 ---
+Rogue uses Minor Fireball on The Hollow King for 15 damage.
+The Hollow King takes 0 damage. [HP: 140/148]
+Warrior uses Arcane Missile on The Hollow King for 35 damage.
+The Hollow King takes 7 damage. [HP: 133/148]
+Cleric attacks The Hollow King for 22 damage!
+The Hollow King takes 0 damage. [HP: 133/148]
+The Hollow King attacks Warrior for 31 damage!
+Warrior takes 6 damage. [HP: 90/100]
+--- End of Round ---
+--- Round 6 ---
+Rogue attacks The Hollow King for 33 damage!
+The Hollow King takes 5 damage. [HP: 128/148]
+Warrior attacks The Hollow King for 29 damage!
+The Hollow King takes 1 damage. [HP: 127/148]
+Cleric attacks The Hollow King for 21 damage!
+The Hollow King takes 0 damage. [HP: 127/148]
+The Hollow King attacks Rogue for 28 damage!
+Rogue takes 13 damage. [HP: 53/100]
+--- End of Round ---
+--- Round 7 ---
+Rogue attacks The Hollow King for 33 damage!
+The Hollow King takes 5 damage. [HP: 122/148]
+Warrior uses Arcane Missile on The Hollow King for 35 damage.
+The Hollow King takes 7 damage. [HP: 115/148]
+Cleric attacks The Hollow King for 24 damage!
+The Hollow King takes 0 damage. [HP: 115/148]
+The Hollow King attacks Rogue for 30 damage!
+Rogue takes 15 damage. [HP: 38/100]
+--- End of Round ---
+--- Round 8 ---
+Rogue attacks The Hollow King for 34 damage!
+The Hollow King takes 6 damage. [HP: 109/148]
+Warrior attacks The Hollow King for 29 damage!
+The Hollow King takes 1 damage. [HP: 108/148]
+Cleric attacks The Hollow King for 22 damage!
+The Hollow King takes 0 damage. [HP: 108/148]
+The Hollow King attacks Cleric for 30 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 9 ---
+Rogue uses Precision Shot on The Hollow King for 16 damage.
+The Hollow King takes 0 damage. [HP: 108/148]
+Warrior attacks The Hollow King for 29 damage!
+The Hollow King takes 1 damage. [HP: 107/148]
+Cleric uses Healing Word on Rogue for 30 healing.
+Rogue heals for 30. [HP: 68/100]
+The Hollow King attacks Cleric for 29 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 10 ---
+Rogue attacks The Hollow King for 32 damage!
+The Hollow King takes 4 damage. [HP: 103/148]
+Warrior attacks The Hollow King for 29 damage!
+The Hollow King takes 1 damage. [HP: 102/148]
+The Hollow King attacks Rogue for 29 damage!
+Rogue takes 14 damage. [HP: 54/100]
+--- End of Round ---
+--- Round 11 ---
+Rogue attacks The Hollow King for 31 damage!
+The Hollow King takes 3 damage. [HP: 99/148]
+Warrior uses Basic Attack on The Hollow King for 8 damage.
+The Hollow King takes 0 damage. [HP: 99/148]
+Cleric attacks The Hollow King for 20 damage!
+The Hollow King takes 0 damage. [HP: 99/148]
+The Hollow King attacks Cleric for 29 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 12 ---
+Rogue attacks The Hollow King for 34 damage!
+The Hollow King takes 6 damage. [HP: 93/148]
+Warrior attacks The Hollow King for 28 damage!
+The Hollow King takes 0 damage. [HP: 93/148]
+Cleric attacks The Hollow King for 21 damage!
+The Hollow King takes 0 damage. [HP: 93/148]
+The Hollow King attacks Cleric for 28 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 13 ---
+Rogue attacks The Hollow King for 30 damage!
+The Hollow King takes 2 damage. [HP: 91/148]
+Warrior uses Elemental Blast on The Hollow King for 60 damage.
+The Hollow King takes 32 damage. [HP: 59/148]
+The Hollow King attacks Cleric for 30 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 14 ---
+Rogue attacks The Hollow King for 34 damage!
+The Hollow King takes 6 damage. [HP: 53/148]
+Warrior attacks The Hollow King for 26 damage!
+The Hollow King takes 0 damage. [HP: 53/148]
+The Hollow King attacks Rogue for 30 damage!
+Rogue takes 15 damage. [HP: 39/100]
+--- End of Round ---
+--- Round 15 ---
+Rogue uses Minor Fireball on The Hollow King for 15 damage.
+The Hollow King takes 0 damage. [HP: 53/148]
+Warrior attacks The Hollow King for 25 damage!
+The Hollow King takes 0 damage. [HP: 53/148]
+Cleric attacks The Hollow King for 20 damage!
+The Hollow King takes 0 damage. [HP: 53/148]
+The Hollow King attacks Rogue for 31 damage!
+Rogue takes 16 damage. [HP: 23/100]
+--- End of Round ---
+--- Round 16 ---
+Rogue uses Minor Fireball on The Hollow King for 19 damage.
+The Hollow King takes 0 damage. [HP: 53/148]
+Warrior attacks The Hollow King for 25 damage!
+The Hollow King takes 0 damage. [HP: 53/148]
+The Hollow King attacks Warrior for 29 damage!
+Warrior takes 4 damage. [HP: 86/100]
+--- End of Round ---
+--- Round 17 ---
+Rogue attacks The Hollow King for 32 damage!
+The Hollow King takes 4 damage. [HP: 49/148]
+Warrior uses Elemental Blast on The Hollow King for 58 damage.
+The Hollow King takes 30 damage. [HP: 19/148]
+Cleric uses Healing Word on Rogue for 42 healing.
+Rogue heals for 42. [HP: 65/100]
+The Hollow King attacks Cleric for 30 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 18 ---
+Rogue attacks The Hollow King for 31 damage!
+The Hollow King takes 3 damage. [HP: 16/148]
+Warrior uses Arcane Missile on The Hollow King for 29 damage.
+The Hollow King takes 1 damage. [HP: 15/148]
+Cleric attacks The Hollow King for 20 damage!
+The Hollow King takes 0 damage. [HP: 15/148]
+The Hollow King attacks Cleric for 30 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 19 ---
+Rogue attacks The Hollow King for 34 damage!
+The Hollow King takes 6 damage. [HP: 9/148]
+Warrior attacks The Hollow King for 26 damage!
+The Hollow King takes 0 damage. [HP: 9/148]
+Cleric attacks The Hollow King for 20 damage!
+The Hollow King takes 0 damage. [HP: 9/148]
+The Hollow King attacks Cleric for 30 damage!
+Cleric takes 0 damage. [HP: 99/100]
+--- End of Round ---
+--- Round 20 ---
+Rogue uses Precision Shot on The Hollow King for 23 damage.
+The Hollow King takes 0 damage. [HP: 9/148]
+Warrior uses Arcane Missile on The Hollow King for 29 damage.
+The Hollow King takes 1 damage. [HP: 8/148]
+The Hollow King attacks Warrior for 31 damage!
+Warrior takes 6 damage. [HP: 80/100]
+--- End of Round ---
+--- Round 21 ---
+Rogue uses Precision Shot on The Hollow King for 24 damage.
+The Hollow King takes 0 damage. [HP: 8/148]
+Warrior uses Elemental Blast on The Hollow King for 53 damage.
+The Hollow King takes 25 damage. [HP: 0/148]
+--- End of Round ---
+Victory! All enemies defeated.
+--- Post-Battle Recovery ---
+Warrior heals for 10. [HP: 90/100]
+Warrior rests and recovers 10 HP.
+Rogue heals for 10. [HP: 75/100]
+Rogue rests and recovers 10 HP.
+Cleric heals for 10. [HP: 100/100]
+Cleric rests and recovers 10 HP.
+
+== Dungeon Run Complete ==

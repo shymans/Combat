@@ -1,275 +1,326 @@
-import tkinter as tk
-from tkinter import filedialog, messagebox, ttk
-import json
-import uuid # For generating unique IDs
+# Import and setup
+import random
+import logging
+import re
+from enemies import enemies
+from skills import skills_data
+from items import usable_items
 
-class HeroManagerApp:
-    """
-    A GUI application for creating and managing dungeon crawling heroes.
-    Allows users to create new level 1 heroes, load heroes from a JSON file,
-    and save the current list of heroes to a JSON file.
-    """
-    def __init__(self, master):
-        """
-        Initializes the HeroManagerApp.
+# This will create a log file of the combat to see the details of the battle.
+logging.basicConfig(filename="combat_log.txt", level=logging.INFO, filemode="w",
+                    format="%(message)s")
 
-        Args:
-            master: The root Tkinter window.
-        """
-        self.master = master
-        master.title("Python Hero Management System")
-        master.geometry("800x700") # Set initial window size
-        master.configure(bg='#282c34') # Dark background for the window
+def parse_range(range_str):
+    """Parses a string like '10-15' into a random integer in that range."""
+    if not range_str:
+        return 0
+    parts = range_str.split("-")
+    if len(parts) == 2:
+        return random.randint(int(parts[0]), int(parts[1]))
+    return int(parts[0])
 
-        # Configure styles for better aesthetics
-        self.style = ttk.Style()
-        self.style.theme_use('clam') # Use 'clam' theme for a more modern look
-        self.style.configure('TFrame', background='#282c34')
-        self.style.configure('TLabel', background='#282c34', foreground='#e0e0e0', font=('Inter', 10))
-        self.style.configure('TEntry', fieldbackground='#3a3f4b', foreground='#e0e0e0', borderwidth=1, relief="flat")
-        self.style.configure('TCombobox', fieldbackground='#3a3f4b', foreground='#e0e0e0', borderwidth=1, relief="flat")
-        self.style.map('TCombobox', fieldbackground=[('readonly', '#3a3f4b')])
-        self.style.configure('TButton', background='#61dafb', foreground='white', font=('Inter', 10, 'bold'), borderwidth=0, relief="flat", padding=5)
-        self.style.map('TButton', background=[('active', '#21a1f1')])
-        self.style.configure('Accent.TButton', background='#4CAF50', foreground='white') # For save button
-        self.style.map('Accent.TButton', background=[('active', '#45a049')])
+class Hero:
+    """Represents a hero character in the party."""
+    def __init__(self, name, hp=30, attack=5, defense=2, speed=3, level=1):
+        self.name = name
+        self.max_hp = hp
+        self.hp = hp
+        
+        # Base stats are stored to properly handle buffs/debuffs
+        self.base_attack = attack
+        self.base_defense = defense
+        self.base_speed = speed
 
-        self.heroes = [] # List to store hero data
+        # Active stats that can be modified by effects
+        self.attack = attack
+        self.defense = defense
+        self.speed = speed
+        
+        self.level = level
+        self.alive = True
+        self.skills = self.assign_skills()
+        self.inventory = self.assign_starting_items()
+        self.effects = []  # To store buffs/debuffs like {'stat': 'attack', 'modifier': 1.2, 'duration': 3}
 
-        # State variables for new hero creation form
-        self.new_hero_name = tk.StringVar()
-        self.new_hero_class = tk.StringVar(value="Warrior")
-        self.new_hero_strength = tk.IntVar(value=10)
-        self.new_hero_dexterity = tk.IntVar(value=10)
-        self.new_hero_intelligence = tk.IntVar(value=10)
+    def assign_skills(self):
+        """Assigns a few random skills to the hero based on their level."""
+        possible = [s for s in skills_data if s.get("level", 1) <= self.level + 1]
+        return random.sample(possible, min(3, len(possible)))
+        
+    def assign_starting_items(self):
+        """Gives the hero 1 to 3 random common usable items to start with."""
+        common_items = [item for item in usable_items if item['rarity'] == 'common']
+        if not common_items:
+            return []
+        num_items = random.randint(1, 3)
+        return random.sample(common_items, k=min(num_items, len(common_items)))
 
-        # Predefined hero classes
-        self.hero_classes = ['Warrior', 'Mage', 'Rogue', 'Cleric']
-
-        # Message display area
-        self.message_label = ttk.Label(master, text="", textvariable=self.message_label, wraplength=700)
-        self.message_label.pack(pady=10)
-
-        # Title
-        title_label = ttk.Label(master, text="Hero Management System", font=('Inter', 24, 'bold'), foreground='#e0e0e0')
-        title_label.pack(pady=20)
-
-        # --- Hero Creation Section ---
-        create_frame = ttk.Frame(master, padding="20 20 20 20", relief="groove", borderwidth=2, style='TFrame')
-        create_frame.pack(pady=10, padx=20, fill="x", expand=True)
-
-        ttk.Label(create_frame, text="Create New Hero", font=('Inter', 16, 'bold'), foreground='#e0e0e0').grid(row=0, column=0, columnspan=2, pady=10)
-
-        ttk.Label(create_frame, text="Hero Name:").grid(row=1, column=0, sticky="w", pady=5, padx=5)
-        ttk.Entry(create_frame, textvariable=self.new_hero_name, width=30).grid(row=1, column=1, sticky="ew", pady=5, padx=5)
-
-        ttk.Label(create_frame, text="Class:").grid(row=2, column=0, sticky="w", pady=5, padx=5)
-        class_dropdown = ttk.Combobox(create_frame, textvariable=self.new_hero_class, values=self.hero_classes, state="readonly")
-        class_dropdown.grid(row=2, column=1, sticky="ew", pady=5, padx=5)
-        class_dropdown.set(self.hero_classes[0]) # Set default value
-
-        ttk.Label(create_frame, text="Strength (1-20):").grid(row=3, column=0, sticky="w", pady=5, padx=5)
-        ttk.Entry(create_frame, textvariable=self.new_hero_strength, width=10, validate="key", validatecommand=(master.register(self._validate_stat_input), '%P')).grid(row=3, column=1, sticky="w", pady=5, padx=5)
-
-        ttk.Label(create_frame, text="Dexterity (1-20):").grid(row=4, column=0, sticky="w", pady=5, padx=5)
-        ttk.Entry(create_frame, textvariable=self.new_hero_dexterity, width=10, validate="key", validatecommand=(master.register(self._validate_stat_input), '%P')).grid(row=4, column=1, sticky="w", pady=5, padx=5)
-
-        ttk.Label(create_frame, text="Intelligence (1-20):").grid(row=5, column=0, sticky="w", pady=5, padx=5)
-        ttk.Entry(create_frame, textvariable=self.new_hero_intelligence, width=10, validate="key", validatecommand=(master.register(self._validate_stat_input), '%P')).grid(row=5, column=1, sticky="w", pady=5, padx=5)
-
-        ttk.Button(create_frame, text="Create Hero", command=self.create_hero, style='TButton').grid(row=6, column=0, columnspan=2, pady=15)
-
-        # Configure grid column weights for responsiveness
-        create_frame.grid_columnconfigure(1, weight=1)
-
-        # --- File Operations Section ---
-        file_frame = ttk.Frame(master, padding="20 20 20 20", relief="groove", borderwidth=2, style='TFrame')
-        file_frame.pack(pady=10, padx=20, fill="x", expand=True)
-
-        ttk.Label(file_frame, text="Load/Save Heroes", font=('Inter', 16, 'bold'), foreground='#e0e0e0').grid(row=0, column=0, columnspan=2, pady=10)
-
-        ttk.Button(file_frame, text="Load Heroes from JSON", command=self.load_heroes, style='TButton').grid(row=1, column=0, pady=10, padx=5, sticky="ew")
-        ttk.Button(file_frame, text="Save Heroes to JSON", command=self.save_heroes, style='Accent.TButton').grid(row=1, column=1, pady=10, padx=5, sticky="ew")
-
-        file_frame.grid_columnconfigure(0, weight=1)
-        file_frame.grid_columnconfigure(1, weight=1)
-
-
-        # --- Display Heroes Section ---
-        display_frame = ttk.Frame(master, padding="20 20 20 20", relief="groove", borderwidth=2, style='TFrame')
-        display_frame.pack(pady=10, padx=20, fill="both", expand=True)
-
-        ttk.Label(display_frame, text="Your Heroes", font=('Inter', 16, 'bold'), foreground='#e0e0e0').pack(pady=10)
-
-        self.hero_display_text = tk.Text(display_frame, height=10, width=80, bg='#3a3f4b', fg='#e0e0e0', font=('Consolas', 10), wrap="word", relief="flat")
-        self.hero_display_text.pack(fill="both", expand=True)
-        self.hero_display_text.config(state="disabled") # Make text widget read-only
-
-    def _validate_stat_input(self, P):
-        """
-        Validates that the input for stats is a number between 1 and 20.
-        """
-        if P == "":
-            return True # Allow empty input temporarily for clearing
-        try:
-            value = int(P)
-            if 1 <= value <= 20:
-                return True
+    def update_effects(self):
+        """Updates status effects at the start of a hero's turn. Resets stats and reapplies active effects."""
+        # Reset stats to base before reapplying non-expired buffs
+        self.attack = self.base_attack
+        self.defense = self.base_defense
+        self.speed = self.base_speed
+        
+        active_effects = []
+        for effect in self.effects:
+            effect['duration'] -= 1
+            if effect['duration'] > 0:
+                active_effects.append(effect)
+                # Re-apply the stat modification
+                if effect['stat'] == 'attack':
+                    self.attack = int(self.attack * effect['modifier'])
+                elif effect['stat'] == 'defense':
+                    self.defense = int(self.defense * effect['modifier'])
+                # Add more stats as needed
             else:
-                self.set_message("Stats must be between 1 and 20.")
-                return False
-        except ValueError:
-            self.set_message("Stats must be a number.")
-            return False
+                logging.info(f"{self.name}'s {effect['name']} has worn off.")
 
-    def set_message(self, msg):
-        """
-        Sets the message displayed to the user.
-        """
-        self.message_label.config(text=msg)
+        self.effects = active_effects
 
-    def create_hero(self):
-        """
-        Handles the creation of a new hero based on form inputs.
-        Generates a unique ID and adds the hero to the list.
-        """
-        name = self.new_hero_name.get().strip()
-        if not name:
-            self.set_message("Hero name cannot be empty!")
+    def take_damage(self, dmg):
+        """Calculates damage taken after defense and updates HP."""
+        dmg_taken = max(0, dmg - self.defense)
+        self.hp -= dmg_taken
+        if self.hp <= 0:
+            self.hp = 0
+            self.alive = False
+        logging.info(f"{self.name} takes {dmg_taken} damage. [HP: {self.hp}/{self.max_hp}]")
+
+    def heal(self, amount):
+        """Heals the hero for a given amount, not exceeding max HP."""
+        if self.alive:
+            self.hp = min(self.max_hp, self.hp + amount)
+            logging.info(f"{self.name} heals for {amount}. [HP: {self.hp}/{self.max_hp}]")
+
+    def use_item(self, item, allies, enemies):
+        """Logic for using an item from the inventory."""
+        if item not in self.inventory:
+            logging.info(f"{self.name} tries to use {item['name']} but doesn't have it.")
             return
 
-        # Ensure stats are within valid range before creating hero
-        try:
-            strength = self.new_hero_strength.get()
-            dexterity = self.new_hero_dexterity.get()
-            intelligence = self.new_hero_intelligence.get()
-            if not (1 <= strength <= 20 and 1 <= dexterity <= 20 and 1 <= intelligence <= 20):
-                 self.set_message("Strength, Dexterity, and Intelligence must be between 1 and 20.")
-                 return
-        except tk.TclError: # Catches error if entry is non-numeric
-            self.set_message("Invalid stat input. Please enter numbers.")
-            return
+        self.inventory.remove(item)
+        logging.info(f"{self.name} uses {item['name']}.")
 
-        new_hero = {
-            "id": str(uuid.uuid4()), # Generate a unique UUID
-            "name": name,
-            "level": 1,
-            "class": self.new_hero_class.get(),
-            "stats": {
-                "strength": strength,
-                "dexterity": dexterity,
-                "intelligence": intelligence,
-                "health": 100,
-                "mana": 50,
-            },
-            "skills": [], # New heroes start with no specific skills
-        }
+        item_type = item["type"]
+        effect_str = item["effect"]
+        target_type = item["target"]
+        
+        # Use regex to find all numbers in the effect string
+        numbers = [int(n) for n in re.findall(r'\d+', effect_str)]
+        
+        if item_type == "healing":
+            amount = numbers[0] if numbers else 0
+            if "HP" in effect_str:
+                if target_type == "self":
+                    self.heal(amount)
+                elif target_type == "ally":
+                    targets = [a for a in allies if a.alive and a.hp < a.max_hp]
+                    if targets:
+                        target = random.choice(targets)
+                        logging.info(f"{self.name} uses {item['name']} on {target.name}.")
+                        target.heal(amount)
 
-        self.heroes.append(new_hero)
-        # Changed to .format() method for broader compatibility
-        self.set_message('Hero "{}" created successfully!'.format(new_hero["name"]))
-        self.update_hero_display()
+        elif item_type == "damage":
+            damage = numbers[0] if numbers else 0
+            if target_type == "enemy":
+                targets = [e for e in enemies if e.alive]
+                if targets:
+                    target = random.choice(targets)
+                    logging.info(f"{self.name} throws a {item['name']} at {target.name} for {damage} damage.")
+                    target.take_damage(damage)
+            elif target_type == "area":
+                logging.info(f"{self.name} uses {item['name']}, hitting all enemies.")
+                for target in enemies:
+                    if target.alive:
+                        target.take_damage(damage)
 
-        # Reset form fields
-        self.new_hero_name.set("")
-        self.new_hero_class.set("Warrior")
-        self.new_hero_strength.set(10)
-        self.new_hero_dexterity.set(10)
-        self.new_hero_intelligence.set(10)
+        elif item_type == "buff":
+            duration = item["duration"]
+            if numbers and duration:
+                percent_boost = numbers[0]
+                modifier = 1 + (percent_boost / 100)
+                
+                new_effect = {
+                    'name': item['name'],
+                    'duration': duration + 1,  # +1 because it ticks down at start of the next turn
+                    'modifier': modifier
+                }
 
-    def load_heroes(self):
-        """
-        Handles loading hero data from a JSON file selected by the user.
-        """
-        file_path = filedialog.askopenfilename(
-            defaultextension=".json",
-            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
-        )
-        if not file_path:
-            self.set_message("No file selected for loading.")
-            return
+                if "attack" in effect_str:
+                    new_effect['stat'] = 'attack'
+                    self.effects.append(new_effect)
+                    self.attack = int(self.attack * modifier)
+                    logging.info(f"{self.name}'s attack is boosted by {percent_boost}%.")
 
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                loaded_data = json.load(f)
+                elif "defense" in effect_str:
+                    new_effect['stat'] = 'defense'
+                    self.effects.append(new_effect)
+                    self.defense = int(self.defense * modifier)
+                    logging.info(f"{self.name}'s defense is boosted by {percent_boost}%.")
+        
+        elif item_type == "cure":
+            # Current implementation doesn't have status ailments to cure.
+            logging.info(f"{self.name} uses {item['name']} to cure ailments.")
+        
+        else: # Utility, etc.
+            logging.info(f"{self.name} uses {item['name']}, but it has no direct combat effect.")
 
-            if isinstance(loaded_data, list) and all(isinstance(item, dict) and 'name' in item and 'level' in item and 'class' in item for item in loaded_data):
-                # Ensure unique IDs for loaded heroes, assign if missing
-                heroes_with_ids = []
-                for hero in loaded_data:
-                    if 'id' not in hero or not hero['id']:
-                        hero['id'] = str(uuid.uuid4())
-                    heroes_with_ids.append(hero)
-
-                self.heroes = heroes_with_ids
-                self.set_message(f{"Successfully loaded {len(self.heroes)} heroes from file!"})
-                self.update_hero_display()
-            else:
-                self.set_message("Invalid JSON file format. Please ensure it's an array of hero objects with 'name', 'level', and 'class'.")
-
-        except FileNotFoundError:
-            self.set_message("File not found.")
-        except json.JSONDecodeError as e:
-            self.set_message(f"Error parsing JSON file: {e}")
-        except Exception as e:
-            self.set_message(f"An unexpected error occurred: {e}")
-
-    def save_heroes(self):
-        """
-        Handles saving the current list of heroes to a JSON file.
-        """
-        if not self.heroes:
-            self.set_message("No heroes to save!")
-            return
-
-        file_path = filedialog.asksaveasfilename(
-            defaultextension=".json",
-            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
-        )
-        if not file_path:
-            self.set_message("Save cancelled.")
-            return
-
-        try:
-            with open(file_path, 'w', encoding='utf-8') as f:
-                json.dump(self.heroes, f, indent=4)
-            self.set_message(f"Heroes saved to {file_path}!")
-        except Exception as e:
-            self.set_message(f"Error saving heroes: {e}")
-
-    def update_hero_display(self):
-        """
-        Updates the text widget to display the current list of heroes.
-        """
-        self.hero_display_text.config(state="normal") # Enable editing for update
-        self.hero_display_text.delete(1.0, tk.END) # Clear existing text
-
-        if not self.heroes:
-            self.hero_display_text.insert(tk.END, "No heroes created yet. Start by creating one above or loading from a file!")
+    def use_skill(self, skill, allies, enemies):
+        """Logic for using a skill."""
+        target_type = skill.get("target")
+        name = skill["name"]
+        if target_type == "self":
+            if "healing" in skill:
+                amount = parse_range(skill["healing"])
+                logging.info(f"{self.name} uses {name} on self for {amount} healing.")
+                self.heal(amount)
+        elif target_type == "single_enemy":
+            targets = [e for e in enemies if e.alive]
+            if targets:
+                target = random.choice(targets)
+                amount = parse_range(skill["damage"])
+                logging.info(f"{self.name} uses {name} on {target.name} for {amount} damage.")
+                target.take_damage(amount)
+        elif target_type == "all_enemies":
+            for target in enemies:
+                if target.alive:
+                    amount = parse_range(skill["damage"])
+                    logging.info(f"{self.name} uses {name} on {target.name} for {amount} damage.")
+                    target.take_damage(amount)
+        elif target_type == "single_ally":
+            targets = [a for a in allies if a.alive and a.hp < a.max_hp]
+            if targets:
+                target = random.choice(targets)
+                amount = parse_range(skill["healing"])
+                logging.info(f"{self.name} uses {name} on {target.name} for {amount} healing.")
+                target.heal(amount)
         else:
-            for hero in self.heroes:
-                display_str = f"Name: {hero.get('name', 'N/A')}\n" \
-                              f"Level: {hero.get('level', 'N/A')}\n" \
-                              f"Class: {hero.get('class', 'N/A')}\n"
-                stats = hero.get('stats', {})
-                display_str += f"  Strength: {stats.get('strength', 'N/A')}\n" \
-                               f"  Dexterity: {stats.get('dexterity', 'N/A')}\n" \
-                               f"  Intelligence: {stats.get('intelligence', 'N/A')}\n" \
-                               f"  Health: {stats.get('health', 'N/A')}\n" \
-                               f"  Mana: {stats.get('mana', 'N/A')}\n"
+            self.basic_attack(random.choice([e for e in enemies if e.alive]))
 
-                skills = hero.get('skills', [])
-                if skills:
-                    display_str += "  Skills:\n"
-                    for skill in skills:
-                        display_str += f"    - {skill.get('name', 'N/A')} (Lvl {skill.get('level', 'N/A')})\n"
-                display_str += "--------------------\n\n"
-                self.hero_display_text.insert(tk.END, display_str)
+    def basic_attack(self, target):
+        """A standard attack against a single target."""
+        damage = random.randint(self.attack, self.attack + 4)
+        logging.info(f"{self.name} attacks {target.name} for {damage} damage!")
+        target.take_damage(damage)
 
-        self.hero_display_text.config(state="disabled") # Disable editing after update
+class Enemy:
+    """Represents an enemy character."""
+    def __init__(self, data, level_scale=0):
+        self.name = data["name"]
+        self.max_hp = data["hp"] + level_scale * 3
+        self.hp = self.max_hp
+        self.attack = data["attack"] + level_scale
+        self.defense = data["defense"] + level_scale
+        self.speed = data["speed"]
+        self.xp = data["xp"] + level_scale * 2
+        self.alive = True
 
-# Main execution block
+    def take_damage(self, dmg):
+        """Calculates damage taken after defense and updates HP."""
+        dmg_taken = max(0, dmg - self.defense)
+        self.hp -= dmg_taken
+        if self.hp <= 0:
+            self.hp = 0
+            self.alive = False
+        logging.info(f"{self.name} takes {dmg_taken} damage. [HP: {self.hp}/{self.max_hp}]")
+
+    def basic_attack(self, target):
+        """A standard attack against a single target."""
+        damage = random.randint(self.attack, self.attack + 3)
+        logging.info(f"{self.name} attacks {target.name} for {damage} damage!")
+        target.take_damage(damage)
+
+def battle(party, enemies_data):
+    """Manages a single battle from start to finish."""
+    logging.info("\n--- A Battle Begins! ---")
+    
+    # Log starting inventories for clarity
+    for hero in party:
+        if hero.inventory:
+            item_names = ", ".join([item['name'] for item in hero.inventory])
+            logging.info(f"{hero.name} starts with: {item_names}")
+
+    combatants = party + enemies_data
+    turn = 1
+    while any(hero.alive for hero in party) and any(enemy.alive for enemy in enemies_data):
+        logging.info(f"--- Round {turn} ---")
+        turn_order = sorted([c for c in combatants if c.alive], key=lambda x: x.speed, reverse=True)
+        
+        for entity in turn_order:
+            if not entity.alive:
+                continue
+
+            if isinstance(entity, Hero):
+                entity.update_effects()  # Update buffs/debuffs at the start of the turn
+                
+                # Decide on an action: attack, use a skill, or use an item
+                possible_actions = ['attack', 'skill']
+                if entity.inventory:
+                    possible_actions.append('item')
+                
+                action = random.choice(possible_actions)
+                
+                if action == 'item':
+                    # For now, just use a random item. This could be made more intelligent.
+                    item_to_use = random.choice(entity.inventory)
+                    entity.use_item(item_to_use, party, enemies_data)
+                elif action == 'skill':
+                    skill = random.choice(entity.skills)
+                    entity.use_skill(skill, party, enemies_data)
+                else:  # 'attack'
+                    if any(e.alive for e in enemies_data):
+                        target = random.choice([e for e in enemies_data if e.alive])
+                        entity.basic_attack(target)
+            else:  # Enemy's turn
+                if any(h.alive for h in party):
+                    target = random.choice([h for h in party if h.alive])
+                    entity.basic_attack(target)
+        
+        logging.info("--- End of Round ---")
+        turn += 1
+    
+    if all(not enemy.alive for enemy in enemies_data):
+        logging.info("Victory! All enemies defeated.")
+    else:
+        logging.info("Defeat... The party has been wiped out.")
+
+def run_dungeon():
+    """Sets up and runs a multi-floor dungeon crawl."""
+    # NOTE: This function requires 'enemies.py' and 'skills.py' to exist and be populated.
+    try:
+        if not enemies or not skills_data:
+            print("Error: 'enemies' or 'skills_data' not found. Please ensure enemies.py and skills.py are present and populated.")
+            return
+    except NameError:
+        print("Error: 'enemies' or 'skills_data' not found. Please ensure enemies.py and skills.py are present and populated.")
+        return
+
+    num_floors = random.randint(3, 7)
+    logging.info(f"== Dungeon Run Starts: {num_floors} Floors ==")
+    party = [Hero("Warrior", hp=100, speed=10, defense=25, attack=25, level=3), Hero("Rogue", hp=100, speed=12, defense=15, attack=30, level=3), Hero("Cleric", hp=100, attack=20, defense=30, speed=9, level=3)]
+
+    for floor in range(1, num_floors + 1):
+        logging.info(f"\n== Floor {floor} ==")
+        num_enemies = random.randint(2, 4)
+        enemy_pool = random.sample(enemies, k=num_enemies)
+        enemy_objs = [Enemy(data, level_scale=floor - 1) for data in enemy_pool]
+        
+        battle(party, enemy_objs)
+
+        if all(not hero.alive for hero in party):
+            logging.info(f"The party was defeated on Floor {floor}.")
+            break
+        else:
+            logging.info("--- Post-Battle Recovery ---")
+            for hero in party:
+                if hero.alive:
+                    heal_amount = int(hero.max_hp * 0.1) # Recover 10% of max HP
+                    hero.heal(heal_amount)
+                    logging.info(f"{hero.name} rests and recovers {heal_amount} HP.")
+
+    logging.info("\n== Dungeon Run Complete ==")
+
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = HeroManagerApp(root)
-    root.mainloop()
+    run_dungeon()
+    print("Dungeon run finished. Check 'combat_log.txt' for the story of your adventure!")

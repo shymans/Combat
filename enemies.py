@@ -1,7 +1,7 @@
 enemies = [
     # Common Enemies
     {"name": "Slime", "rarity": "common", "hp": 10, "attack": 2, "defense": 1, "speed": 3, "special_skill": None, "drops": ["Goo", "Herb"], "xp": 5},
-    {"name": "Ratling", "rarity": "common", "hp": 12, "attack": 3, "defense": 2, "speed": 5, "special_skill": None, "drops": ["Cloth Scrap", "Cheese"], "xp": 6},
+    {"name": "Rat", "rarity": "common", "hp": 12, "attack": 3, "defense": 2, "speed": 5, "special_skill": None, "drops": ["Cloth Scrap", "Cheese"], "xp": 6},
     {"name": "Cave Bat", "rarity": "common", "hp": 8, "attack": 2, "defense": 1, "speed": 7, "special_skill": None, "drops": ["Bat Wing", "Minor Potion"], "xp": 6},
     {"name": "Goblin Scout", "rarity": "common", "hp": 15, "attack": 4, "defense": 2, "speed": 4, "special_skill": None, "drops": ["Rusty Knife", "Coin"], "xp": 8},
     {"name": "Skeleton", "rarity": "common", "hp": 18, "attack": 5, "defense": 4, "speed": 2, "special_skill": None, "drops": ["Bone Shard", "Rusty Armor"], "xp": 10},
@@ -37,3 +37,164 @@ enemies = [
     {"name": "Mother Mycelia", "rarity": "boss", "hp": 100, "attack": 20, "defense": 18, "speed": 4, "special_skill": "Spore Plague, Regeneration", "drops": ["Mycelia Heart", "Spore Wand", "Rare Elixirs"], "xp": 140},
     {"name": "The Hollow King", "rarity": "boss", "hp": 130, "attack": 22, "defense": 22, "speed": 5, "special_skill": "Bone Tempest, Curse of Despair", "drops": ["Hollow Crown", "King’s Plate", "Ancient Tome"], "xp": 160},
 ]
+
+# Monster Special Skills
+
+special_skills = {
+    "Poison Bite": {
+        "damage": "Normal + Poison DOT",
+        "status_effect": "Poison",
+        "duration": 3,
+        "description": "Bites the target, dealing base damage and inflicting poison for a few turns."
+    },
+    "Blinding Dust": {
+        "damage": "None",
+        "status_effect": "Blind",
+        "duration": 2,
+        "description": "Blinds the enemy, reducing accuracy for a short time."
+    },
+    "Health Drain": {
+        "damage": "Leech (5–10 HP)",
+        "status_effect": "None",
+        "duration": 0,
+        "description": "Drains health from the target and heals the user."
+    },
+    "Ember Touch": {
+        "damage": "Minor Fire (5–8)",
+        "status_effect": "Burn (20% chance)",
+        "duration": 2,
+        "description": "Scorches the enemy with a fiery touch that may ignite them."
+    },
+    "Peck Barrage": {
+        "damage": "3 hits x 2–4 damage",
+        "status_effect": "None",
+        "duration": 0,
+        "description": "Rapid pecking that hits multiple times with less accuracy."
+    },
+    "Phase Through": {
+        "damage": "None",
+        "status_effect": "Evasion Boost",
+        "duration": 2,
+        "description": "Temporarily becomes intangible, avoiding physical damage."
+    },
+    "Berserk": {
+        "damage": "Boosted Attack",
+        "status_effect": "Attack ↑ / Defense ↓",
+        "duration": 3,
+        "description": "Enters a frenzied state, gaining attack but lowering defense."
+    },
+    "Firestorm": {
+        "damage": "Fire AoE (10–15 each target)",
+        "status_effect": "Burn (25% chance)",
+        "duration": 3,
+        "description": "Engulfs all enemies in a fiery storm, may ignite."
+    },
+    "Venom Spit": {
+        "damage": "Moderate (8–12)",
+        "status_effect": "Poison",
+        "duration": 3,
+        "description": "Spits venom that damages and poisons the enemy."
+    },
+    "Paralyzing Touch": {
+        "damage": "Low (5–7)",
+        "status_effect": "Paralysis",
+        "duration": 1,
+        "description": "Chance to immobilize the enemy on contact."
+    },
+    "Shadow Bolt": {
+        "damage": "Dark (10–14)",
+        "status_effect": "None",
+        "duration": 0,
+        "description": "A blast of dark energy dealing magic damage."
+    },
+    "Electric Pulse": {
+        "damage": "Lightning (12–15)",
+        "status_effect": "Stun (30% chance)",
+        "duration": 1,
+        "description": "Zaps the enemy with electricity; may stun."
+    },
+    "Shield Wall": {
+        "damage": "None",
+        "status_effect": "Defense ↑↑",
+        "duration": 3,
+        "description": "Forms a defensive barrier that greatly increases defense."
+    },
+    "Freeze Aura": {
+        "damage": "Ice AoE (6–10)",
+        "status_effect": "Slow / Freeze (chance)",
+        "duration": 2,
+        "description": "Radiates chilling air that slows or freezes nearby enemies."
+    },
+    "Sonic Screech": {
+        "damage": "Sonic AoE (8–12)",
+        "status_effect": "Confuse",
+        "duration": 2,
+        "description": "A disorienting scream that damages and may confuse foes."
+    },
+    "Reflect Damage": {
+        "damage": "Reflects 30% taken",
+        "status_effect": "Thorns",
+        "duration": 3,
+        "description": "Reflects a portion of incoming damage back to the attacker."
+    },
+    "Spore Burst": {
+        "damage": "Minor AoE (5–7)",
+        "status_effect": "Confuse / Poison",
+        "duration": 2,
+        "description": "Explodes in spores that afflict multiple enemies with ailments."
+    },
+    "Time Warp": {
+        "damage": "None",
+        "status_effect": "Skip Turn",
+        "duration": 1,
+        "description": "Disrupts time, making one enemy miss their next action."
+    },
+    "Mana Drain": {
+        "damage": "Mana Leech (5–10 MP)",
+        "status_effect": "Mana Loss",
+        "duration": 0,
+        "description": "Steals mana from the opponent and restores the user’s."
+    },
+    "Flame Howl": {
+        "damage": "Fire AoE (8–14)",
+        "status_effect": "Fear / Attack ↓",
+        "duration": 2,
+        "description": "A terrifying roar infused with flame that weakens enemies."
+    },
+    "Soul Drain": {
+        "damage": "Life & Mana Leech (15–20)",
+        "status_effect": "None",
+        "duration": 0,
+        "description": "Steals health and mana from all enemies."
+    },
+    "Summon Shadows": {
+        "damage": "None",
+        "status_effect": "Summons",
+        "duration": "Until defeated",
+        "description": "Summons shadow minions to aid in battle."
+    },
+    "Spore Plague": {
+        "damage": "None",
+        "status_effect": "Stat Reduction (All)",
+        "duration": 4,
+        "description": "Infects all enemies with spores that sap their stats."
+    },
+    "Regeneration": {
+        "damage": "None",
+        "status_effect": "HP Regen",
+        "duration": 3,
+        "description": "Restores health gradually over time."
+    },
+    "Bone Tempest": {
+        "damage": "Physical AoE (14–18)",
+        "status_effect": "Bleed (20% chance)",
+        "duration": 2,
+        "description": "Summons swirling bone shards to damage all enemies."
+    },
+    "Curse of Despair": {
+        "damage": "None",
+        "status_effect": "Attack ↓ / Defense ↓",
+        "duration": 3,
+        "description": "Dark curse that weakens an enemy’s offensive and defensive abilities."
+    }
+}
